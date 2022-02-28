@@ -1,0 +1,139 @@
+/* -------------------- */
+/* Imports ------------ */
+/* -------------------- */
+
+/* >>= Google Fonts =<< */
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Big+Shoulders+Text:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Expletus+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Fira+Code:wght@400;500;692&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,800&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Readex+Pro:wght@200;300;400;500;600&family=Tourney:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*
+::Display::
+font-family: "Big Shoulders Display", cursive;
+font-family: "Big Shoulders Stencil Display", cursive;
+font-family: "Big Shoulders Text", cursive;
+font-family: "Tourney", cursive;
+font-family: "Expletus Sans", cursive;
+
+::Cursive::
+font-family: "Dancing Script", cursive;
+font-family: "Caveat", cursive;
+
+::Serif::
+font-family: "Noto Serif Display", serif;
+font-family: "Playfair Display", serif;
+
+::Sans-Serif::
+font-family: "Readex Pro", sans-serif;
+
+::Monospace::
+font-family: "Fira Code", monospace;
+font-family: "JetBrains Mono", monospace;
+*/
+
+/* -------------------- */
+/* VARIABLES ---------- */
+/* -------------------- */
+
+:root {
+  /* >>= COLORS =<< */
+  --color_light_1: #fefcff; /* Milk White */
+  --color_light_2: #faf0dd; /* Soft Ivory */
+  --color_light_3: #ffe6e8; /* Blush */
+  --color_light_4: #fefcff59;
+  --color_dark_1: #0c090a; /* Night */
+  --color_dark_2: #3d3c3a; /* Iridium */
+  --color_dark_3: #29465b; /* Dark Blue Grey */
+  --color_dark_4: rgba(2, 12, 16, 0.90);
+  --color_accent_1: #aa6c39; /* Dark Gold */
+  --color_accent_2: #f5e216; /* Banana Yellow */
+  --color_accent_3: #f70d1a; /* Ferrari Red */
+  --color_accent_4: rgba(50, 0, 0, 0.5);
+
+  /* >>= FONTS =<< */
+  --font_display_1: "Big Shoulders Stencil Display", cursive;
+  --font_display_2: "Big Shoulders Display", cursive;
+  --font_display_3: "Big Shoulders Text", cursive;
+  --font_display_4: "Tourney", cursive;
+  --font_cursive_1: "Dancing Script", cursive;
+  --font_cursive_2: "Caveat", cursive;
+  --font_serif_1: "Noto Serif Display", serif;
+  --font_serif_2: "Playfair Display", serif;
+  --font_sans-serif_1: "Readex Pro", sans-serif;
+  --font_sans-serif_2: "Montserrat", sans-serif;
+  --font_monospace_1: "JetBrains Mono", monospace;
+  --font_monospace_2: "Fira Code", monospace;
+
+  /* >>= Display Breakpoints =<< */
+  --width_mobile: 576px;
+  --width_tablet: 768px;
+  --width_desktop: 992px;
+  --width_hd: 1200px;
+
+  /* >>= MULTIPLIER =<< */
+  --space-multiplier: 1;
+  --font-multiplier: 1.5em;
+  --main-spacing: 15px 5px 10px 5px;
+  --header-footer-spacing: 10px 5px;
+}
+
+/* -------------------- */
+/* RESPONSIVENESS ----- */
+/* -------------------- */
+@media (min-width: var(--breakpoint_mobile)) {
+  :root {
+    --spacing-multiplier: 2;
+    --headings-multiplier: 1.5;
+  }
+}
+@media (min-width: var(--breakpoint_tablet)) {
+  :root {
+    --spacing-multiplier: 2;
+    --headings-multiplier: 1.5;
+  }
+}
+@media (min-width: var(--breakpoint_desktop)) {
+  :root {
+    --spacing-multiplier: 2;
+    --headings-multiplier: 1.5;
+  }
+}
+@media (min-width: var(--breakpoint_hd)) {
+  :root {
+    --spacing-multiplier: 2;
+    --headings-multiplier: 1.5;
+  }
+}
+
+/* >>= Breakpoint (Default) - Mobile =<< */
+.column {
+  --columns: 12; /* number of columns in the grid system */
+  --width: var(--width-mobile, 0); /* width of the element */
+
+  border: var(--color_accent_2) 2px solid;
+  border-radius: 8px;
+  padding: 16px;
+  flex-basis: calc(var(--width) / var(--columns) * 100%);
+}
+
+/* >>= Breakpoint - Tablet =<< */
+@media (min-width: 576px) {
+  .column {
+    --width-tablet: var(--width-mobile);
+    --width: var(--width-tablet);
+  }
+}
+
+/* >>= Breakpoint - Desktop =<< */
+@media (min-width: 768px) {
+  .column {
+    --width-desktop: var(--width-tablet);
+    --width: var(--width-desktop);
+  }
+}
+
+/* >>= Breakpoint - Ultra =<< */
+@media (min-width: 992px) {
+  .column {
+    --width-hd: var(--width-desktop);
+    --width: var(--width-hd);
+  }
+}
